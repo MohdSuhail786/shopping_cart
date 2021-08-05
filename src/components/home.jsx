@@ -5,7 +5,7 @@ import { data } from "../data";
 import Cart from "./cart";
 
 export default function Home() {
-  const [data,setData] = React.useState([]);
+//   const [data,setData] = React.useState([]);
   const [noOfItem, setNoOfItem] = React.useState(() => {
     return localStorage.cart ? JSON.parse(localStorage.cart).length : 0;
   });
@@ -28,13 +28,13 @@ export default function Home() {
     if (openCart) window.location.reload();
   }
 
-  useLayoutEffect(()=>{
-    fetch('http://localhost:5555/products',{
-      method:"GET"
-    }).then(res => res.json()).then(data =>{
-      setData(data);
-    })
-  },[])
+//   useLayoutEffect(()=>{
+//     fetch('http://localhost:5555/products',{
+//       method:"GET"
+//     }).then(res => res.json()).then(data =>{
+//       setData(data);
+//     })
+//   },[])
 
   return (
     <>
